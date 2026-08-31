@@ -31,12 +31,12 @@ const featuredProjects = featuredSlugs
   description='Raphael Gottweis is a PhD student in Economics at WU Vienna, working on labor economics, working from home, AI, and behavioral economics.'
   navClass='bg-slate-100'
 >
-  <main class='bg-pink-theme p-6'>
+  <main class='bg-blue-theme p-6'>
     <MobileSocials />
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
+    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4 items-stretch'>
       <h2 class='hidden'>About Raphael Gottweis</h2>
-      <div class='col-span-8 md:col-span-5'>
-        <Card color='#93c5fd'>
+      <div class='col-span-8 md:col-span-5 flex'>
+        <Card color='white'>
           <div class='flex flex-col justify-between items-start gap-4'>
             <p class='mt-4 outfit text-2xl md:text-5xl lg:text-6xl'>
               Hi, I'm Raphael
@@ -80,9 +80,9 @@ const featuredProjects = featuredSlugs
           </div>
         </Card>
       </div>
-      <div class='col-span-8 md:col-span-3'>
+      <div class='col-span-8 md:col-span-3 flex'>
         <Card color='white'>
-          <div class='h-64 md:h-full rounded-lg border-[3px] border-black overflow-hidden'>
+          <div class='h-64 md:h-full w-full rounded-lg border-[3px] border-black overflow-hidden'>
             <Image
               src={profile}
               alt='Raphael Gottweis'
@@ -96,7 +96,7 @@ const featuredProjects = featuredSlugs
     </section>
 
     <section class='mt-8'>
-      <Card color='white'>
+      <Card color='#f9a8d4'>
         <h2 class='text-2xl md:text-4xl lg:text-5xl mb-6 dm-serif'>
           What I'm currently obsessed with
         </h2>
@@ -119,7 +119,7 @@ const featuredProjects = featuredSlugs
     </section>
 
     <section class='mt-8'>
-      <Card color='white'>
+      <Card color='#d8b4fe'>
         <div class='flex justify-between items-end flex-wrap gap-4 mb-6'>
           <h2 class='text-2xl md:text-4xl lg:text-5xl dm-serif'>
             Recent projects
@@ -150,8 +150,8 @@ const featuredProjects = featuredSlugs
       </Card>
     </section>
 
-    <section class='mt-8 grid md:grid-cols-2 gap-8'>
-      <Card color='white'>
+    <section class='mt-8 grid md:grid-cols-2 gap-8 items-stretch'>
+      <Card color='#f9a8d4'>
         <h2 class='text-2xl md:text-4xl mb-4 dm-serif'>Background</h2>
         <p class='poppins'>
           I studied economics at WU Vienna (BSc, MSc Science Track, top 1% of
@@ -162,7 +162,7 @@ const featuredProjects = featuredSlugs
           Executive Agency and, more recently, the World Bank.
         </p>
       </Card>
-      <Card color='white'>
+      <Card color='#d8b4fe'>
         <h2 class='text-2xl md:text-4xl mb-4 dm-serif'>
           Working with companies and policy
         </h2>
