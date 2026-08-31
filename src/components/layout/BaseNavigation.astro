@@ -5,6 +5,7 @@ type SocialIconName = 'github' | 'twitter' | 'linkedin' | 'rss';
 
 interface Props {
   pageTitle?: string;
+  bgClass?: string;
 }
 
 const navigationItems = [
@@ -22,10 +23,15 @@ const socialIcons: Array<{ name: string; url: string; icon: SocialIconName }> = 
   },
 ];
 
-const { pageTitle } = Astro.props;
+const { pageTitle, bgClass } = Astro.props;
 ---
 
-<header class='border-b-4 border-black flex justify-between p-6 items-center'>
+<header
+  class:list={[
+    'border-b-4 border-black flex justify-between p-6 items-center',
+    bgClass,
+  ]}
+>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href='/' title='Back to Home'>
     <p class='righteous md:text-5xl'>Raphael Gottweis</p>
