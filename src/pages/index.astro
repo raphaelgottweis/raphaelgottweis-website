@@ -4,18 +4,30 @@ import { Button, Card, Pill } from '@eliancodes/brutal-ui';
 import Layout from '@layouts/Default.astro';
 import profile from '../assets/profile.jpg';
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 
 const obsessions = [
-  'Working from home and labor market outcomes',
-  'LLM-based classification of job postings and tasks (currently applied to AI exposure in Austria)',
-  'Loss aversion and behavioral responses to energy prices',
+  'Using administrative data to study how working from home impacts workers in Austria',
+  'LLM-based classification of job postings and tasks — applied to AI exposure in the Austrian labor market',
 ];
 
 const collaborators = [
-  { name: 'karriere.at', note: 'job posting data for the AI-exposure project' },
-  { name: 'Grid provider, Lower Austria', note: 'field experiment on electricity consumption' },
+  { name: 'karriere.at', note: "Austria's largest job platform — job posting data for the AI-exposure project" },
+  { name: 'Notruf Niederösterreich GmbH', note: 'emergency call and dispatch data for the gender-in-EMS paper' },
+  { name: 'Linz Netz GmbH & Netz Oberösterreich GmbH', note: "Upper Austria's two largest grid operators — field experiment on electricity consumption" },
   { name: 'World Bank', note: 'applied economic research and data analysis' },
 ];
+
+const featuredSlugs = ['ai-labor-market-austria', 'working-from-home', 'loss-aversion-electricity'];
+const featuredThumbs: Record<string, string> = {
+  'ai-labor-market-austria': '/research/ai-labor-market.svg',
+  'working-from-home': '/research/working-from-home.svg',
+  'loss-aversion-electricity': '/research/loss-aversion.svg',
+};
+const allProjects = await getCollection('research');
+const featuredProjects = featuredSlugs
+  .map((slug) => allProjects.find((p) => p.id === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 ---
 
 <Layout
@@ -96,6 +108,36 @@ const collaborators = [
           {obsessions.map((item) => <li>{item}</li>)}
         </ul>
       </Card>
+    </section>
+
+    <section class='mt-8'>
+      <div class='flex justify-between items-end flex-wrap gap-4 mb-6'>
+        <h2 class='text-2xl md:text-4xl lg:text-5xl dm-serif'>
+          Recent projects
+        </h2>
+        <Button target={'_self'} href='/research/'>
+          View all papers &rarr;
+        </Button>
+      </div>
+      <div class='grid md:grid-cols-3 gap-8'>
+        {
+          featuredProjects.map((project) => (
+            <Card color='white'>
+              <div class='h-40 rounded-lg border-[3px] border-black overflow-hidden'>
+                <img
+                  src={featuredThumbs[project.id]}
+                  alt=''
+                  class='h-full w-full object-cover'
+                />
+              </div>
+              <h3 class='poppins text-lg md:text-xl mt-4'>
+                {project.data.title}
+              </h3>
+              <p class='poppins mt-2 text-sm'>{project.data.description}</p>
+            </Card>
+          ))
+        }
+      </div>
     </section>
 
     <section class='mt-8 grid md:grid-cols-2 gap-8'>
