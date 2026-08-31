@@ -1,0 +1,55 @@
+---
+import { Card, Pill } from '@eliancodes/brutal-ui';
+import Layout from '@layouts/Default.astro';
+
+const courses = [
+  {
+    title: 'Labour Economics',
+    level: 'Advanced undergraduate (end-of-bachelor)',
+    institution: 'Vienna University of Economics and Business (WU)',
+    tags: ['Labor Economics'],
+  },
+  {
+    title: 'Public Economics',
+    level: 'Advanced undergraduate (end-of-bachelor)',
+    institution: 'Vienna University of Economics and Business (WU)',
+    tags: ['Public Economics'],
+  },
+];
+---
+
+<Layout
+  title='Teaching'
+  pageTitle='Raphael Gottweis | Teaching'
+  description='Teaching by Raphael Gottweis at Vienna University of Economics and Business (WU).'
+>
+  <main class='bg-purple-theme p-6'>
+    <section class='mb-8'>
+      <h2 class='outfit text-3xl md:text-5xl'>Teaching</h2>
+      <p class='poppins mt-4 max-w-2xl'>
+        I lecture in advanced undergraduate courses at WU Vienna, at the
+        end-of-bachelor level.
+      </p>
+    </section>
+    <ul class='grid md:grid-cols-2 gap-8'>
+      {
+        courses.map((course) => (
+          <li>
+            <Card color='white'>
+              <h3 class='poppins text-lg md:text-2xl'>{course.title}</h3>
+              <p class='poppins mt-2'>{course.level}</p>
+              <p class='poppins mt-1 text-sm'>{course.institution}</p>
+              <ul class='flex flex-wrap gap-3 mt-4'>
+                {course.tags.map((tag) => (
+                  <li>
+                    <Pill>{tag}</Pill>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

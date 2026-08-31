@@ -1,0 +1,30 @@
+---
+import { Button, Card } from '@eliancodes/brutal-ui';
+import Layout from '@layouts/Default.astro';
+---
+
+<Layout
+  title='CV'
+  pageTitle='Raphael Gottweis | CV'
+  description="Raphael Gottweis' academic CV: education, research, teaching, and professional experience."
+>
+  <main class='bg-green-theme p-6'>
+    <section class='mb-8'>
+      <div class='flex justify-between items-start flex-wrap gap-4'>
+        <h2 class='outfit text-3xl md:text-5xl'>CV</h2>
+        <Button target='_blank' href='/Gottweis_CV.pdf'>
+          Download PDF &rarr;
+        </Button>
+      </div>
+    </section>
+    <Card color='white'>
+      <div class='w-full h-[85vh]'>
+        <iframe
+          src='/Gottweis_CV.pdf'
+          title="Raphael Gottweis' CV"
+          class='w-full h-full border-2 border-black'
+        />
+      </div>
+    </Card>
+  </main>
+</Layout>

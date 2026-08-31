@@ -1,0 +1,133 @@
+---
+import MobileSocials from '@components/home/MobileSocials.astro';
+import { Button, Card, Pill } from '@eliancodes/brutal-ui';
+import Layout from '@layouts/Default.astro';
+import profile from '../assets/profile.jpg';
+import { Image } from 'astro:assets';
+
+const obsessions = [
+  'Working from home and labor market outcomes',
+  'LLM-based classification of job postings and tasks (currently applied to AI exposure in Austria)',
+  'Loss aversion and behavioral responses to energy prices',
+];
+
+const collaborators = [
+  { name: 'karriere.at', note: 'job posting data for the AI-exposure project' },
+  { name: 'Grid provider, Lower Austria', note: 'field experiment on electricity consumption' },
+  { name: 'World Bank', note: 'applied economic research and data analysis' },
+];
+---
+
+<Layout
+  title='Home'
+  pageTitle='Raphael Gottweis | Home'
+  description='Raphael Gottweis is a PhD student in Economics at WU Vienna, working on labor economics, working from home, AI, and behavioral economics.'
+>
+  <main class='bg-pink-theme p-6'>
+    <MobileSocials />
+    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
+      <h2 class='hidden'>About Raphael Gottweis</h2>
+      <div class='col-span-8 md:col-span-5'>
+        <Card>
+          <div class='flex flex-col justify-between items-start gap-4'>
+            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-6xl'>
+              Hi, I'm Raphael
+            </p>
+            <p class='outfit text-xl md:text-2xl lg:text-3xl'>
+              I'm a PhD student in Economics at <a
+                class='text-white'
+                target='_blank'
+                rel='noopener'
+                href='https://www.wu.ac.at/'>WU Vienna</a
+              >, working on labor economics — homeoffice and AI in particular.
+            </p>
+            <p class='poppins text-lg'>
+              I also teach Public Economics and Labour Economics at WU, and
+              I'm a Research Associate at the <a
+                class='underline'
+                target='_blank'
+                rel='noopener'
+                href='https://www.jku.at/en/energyinstitute/'>Energy Institute at JKU Linz</a
+              >.
+            </p>
+            <p class='poppins text-lg'>
+              Reach me at <a
+                class='underline'
+                href='mailto:raphael.gottweis@wu.ac.at'>raphael.gottweis@wu.ac.at</a
+              > or on <a
+                class='underline'
+                target='_blank'
+                rel='noopener'
+                href='https://www.linkedin.com/in/raphaelgottweis/'>LinkedIn</a
+              >.
+            </p>
+            <div class='flex gap-4 flex-wrap'>
+              <Button target={'_self'} href='/research/'>
+                See my research &rarr;
+              </Button>
+              <Button target={'_self'} href='/cv/'>
+                My CV &rarr;
+              </Button>
+            </div>
+          </div>
+        </Card>
+      </div>
+      <div class='col-span-8 md:col-span-3'>
+        <Card color='white'>
+          <div class='h-64 md:h-full rounded-lg border-[3px] border-black overflow-hidden'>
+            <Image
+              src={profile}
+              alt='Raphael Gottweis'
+              width={600}
+              height={700}
+              class='h-full w-full object-cover'
+            />
+          </div>
+        </Card>
+      </div>
+    </section>
+
+    <section class='mt-8'>
+      <Card>
+        <h2 class='text-2xl md:text-4xl lg:text-5xl mb-6 dm-serif'>
+          What I'm currently obsessed with
+        </h2>
+        <ul class='poppins space-y-3 list-disc list-inside'>
+          {obsessions.map((item) => <li>{item}</li>)}
+        </ul>
+      </Card>
+    </section>
+
+    <section class='mt-8 grid md:grid-cols-2 gap-8'>
+      <Card color='white'>
+        <h2 class='text-2xl md:text-4xl mb-4 dm-serif'>Background</h2>
+        <p class='poppins'>
+          I studied economics at WU Vienna (BSc, MSc Science Track, top 1% of
+          my cohort), with an exchange semester at ISCTE Business School in
+          Lisbon. Before my PhD I worked as a student assistant on behavioral
+          economics and public finance projects at the Institute for Advanced
+          Studies (IHS), and spent time at the European Commission's Research
+          Executive Agency and, more recently, the World Bank.
+        </p>
+      </Card>
+      <Card color='white'>
+        <h2 class='text-2xl md:text-4xl mb-4 dm-serif'>
+          Working with companies and policy
+        </h2>
+        <p class='poppins mb-4'>
+          I like research that is useful outside of academia. Some of the
+          organizations I collaborate with:
+        </p>
+        <ul class='flex flex-wrap gap-3'>
+          {
+            collaborators.map((c) => (
+              <li title={c.note}>
+                <Pill>{c.name}</Pill>
+              </li>
+            ))
+          }
+        </ul>
+      </Card>
+    </section>
+  </main>
+</Layout>

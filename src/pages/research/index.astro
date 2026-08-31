@@ -1,0 +1,28 @@
+---
+import ResearchList from '@components/research/ResearchList.astro';
+import Layout from '@layouts/Default.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('research').then((collection) =>
+  collection.sort((a, b) => a.data.order - b.data.order)
+);
+---
+
+<Layout
+  title='Research'
+  pageTitle='Raphael Gottweis | Research'
+  description='Research projects by Raphael Gottweis on labor economics, working from home, AI and behavioral economics.'
+>
+  <main class='bg-blue-theme p-6'>
+    <section class='mb-8'>
+      <h2 class='outfit text-3xl md:text-5xl'>Research</h2>
+      <p class='poppins mt-4 max-w-2xl'>
+        My work sits at the intersection of labor and behavioral economics,
+        with a growing focus on how AI is reshaping work. I like projects
+        that are useful to policymakers and industry partners, not just to
+        other economists.
+      </p>
+    </section>
+    <ResearchList projects={projects} />
+  </main>
+</Layout>

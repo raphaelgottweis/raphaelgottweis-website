@@ -1,0 +1,7 @@
+## Raphael Gottweis ##
+
+Site content by Raphael Gottweis
+- email: raphael.gottweis@wu.ac.at
+
+Built on the Brutal theme for Astro by Elian Van Cutsem
+- website: www.elian.codes

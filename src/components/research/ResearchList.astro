@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ResearchCard from './ResearchCard.astro';
+
+interface Props {
+  projects: CollectionEntry<'research'>[];
+}
+
+const { projects } = Astro.props;
+---
+
+<ul class='grid md:grid-cols-2 gap-8'>
+  {
+    projects.map((project) => (
+      <li>
+        <ResearchCard project={project} />
+      </li>
+    ))
+  }
+</ul>
