@@ -7,7 +7,7 @@ tags:
   - Energy
 status: Field Experiment
 authors: Raphael Gottweis
-updated: 2026-03-01
+updated: "2026-03-01"
 order: 2
 ---
 

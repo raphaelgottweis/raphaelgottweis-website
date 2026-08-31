@@ -7,7 +7,7 @@ tags:
   - Labor Economics
 status: Ongoing
 authors: Raphael Gottweis
-updated: 2026-08-01
+updated: "2026-08-01"
 order: 0
 ---
 
