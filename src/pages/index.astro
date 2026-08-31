@@ -6,11 +6,6 @@ import profile from '../assets/profile.jpg';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
-const obsessions = [
-  'Using administrative data to study how working from home impacts workers in Austria',
-  'LLM-based classification of job postings and tasks — applied to AI exposure in the Austrian labor market',
-];
-
 const collaborators = [
   { name: 'karriere.at', note: "Austria's largest job platform — job posting data for the AI-exposure project" },
   { name: 'Notruf Niederösterreich GmbH', note: 'emergency call and dispatch data for the gender-in-EMS paper' },
@@ -105,7 +100,19 @@ const featuredProjects = featuredSlugs
           What I'm currently obsessed with
         </h2>
         <ul class='poppins space-y-3 list-disc list-inside'>
-          {obsessions.map((item) => <li>{item}</li>)}
+          <li>
+            Thinking about how homeoffice doesn't just reshape my own
+            workday, but that of hundreds of thousands of Austrians
+          </li>
+          <li>
+            Falling a little for LLMs, and trying to figure out how to
+            personalize the useful parts without slipping into the <a
+              class='underline'
+              target='_blank'
+              rel='noopener'
+              href='https://www.nytimes.com/2026/08/14/magazine/ai-chatbots-internet-communication-loops.html'
+            >bot loop</a>
+          </li>
         </ul>
       </Card>
     </section>
