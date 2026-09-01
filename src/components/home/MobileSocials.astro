@@ -6,7 +6,7 @@ type SocialIconName = 'github' | 'twitter' | 'linkedin' | 'rss' | 'email';
 const socials: Array<{ name: string; url: string; icon: SocialIconName }> = [
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/raphaelgottweis/',
+    url: 'https://www.linkedin.com/in/raphael-gottweis-99bab0258/',
     icon: 'linkedin',
   },
   {
@@ -19,12 +19,19 @@ const socials: Array<{ name: string; url: string; icon: SocialIconName }> = [
 
 <section class='md:hidden'>
   <h2 class='hidden'>Socials section</h2>
-  <ul class='flex justify-between'>
+  <ul class='flex gap-4'>
     {
       socials.map((item) => (
-        <li class='rounded border-2 border-black bg-white px-4 py-2 text-green-700 card-shadow'>
-          <a href={item.url} target='_blank' rel='noopener' title={`Go to ${item.name}`}>
-            <SocialIcon icon={item.icon} class='p-6' />
+        <li class='flex-1 rounded border-2 border-black bg-white text-green-700 card-shadow'>
+          <a
+            href={item.url}
+            target='_blank'
+            rel='noopener'
+            title={`Go to ${item.name}`}
+            class='flex items-center justify-center gap-2 px-4 py-3'
+          >
+            <SocialIcon icon={item.icon} class='h-5 w-5 shrink-0' />
+            <span class='poppins text-black text-sm'>{item.name}</span>
           </a>
         </li>
       ))

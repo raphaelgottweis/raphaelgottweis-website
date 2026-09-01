@@ -11,32 +11,34 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<Card color='white'>
-  <div class='flex justify-between items-start gap-4 flex-wrap'>
-    <h3 class='poppins text-lg md:text-2xl'>{project.data.title}</h3>
-    <span class='rounded-full border-2 border-black bg-blue-theme px-3 py-1 text-sm card-shadow whitespace-nowrap'>
-      {project.data.status}
-    </span>
-  </div>
-  <div class='poppins mt-4 prose prose-sm max-w-none'>
-    <Content />
-  </div>
-  <div class='flex justify-between items-center mt-6 flex-wrap gap-4'>
-    <ul class='flex flex-wrap gap-3'>
+<div id={project.id} class='scroll-mt-8'>
+  <Card color='white'>
+    <div class='flex justify-between items-start gap-4 flex-wrap'>
+      <h3 class='poppins text-lg md:text-2xl'>{project.data.title}</h3>
+      <span class='rounded-full border-2 border-black bg-blue-theme px-3 py-1 text-sm card-shadow whitespace-nowrap'>
+        {project.data.status}
+      </span>
+    </div>
+    <div class='poppins mt-4 prose prose-sm max-w-none'>
+      <Content />
+    </div>
+    <div class='flex justify-between items-center mt-6 flex-wrap gap-4'>
+      <ul class='flex flex-wrap gap-3'>
+        {
+          project.data.tags.map((tag) => (
+            <li>
+              <Pill>{tag}</Pill>
+            </li>
+          ))
+        }
+      </ul>
       {
-        project.data.tags.map((tag) => (
-          <li>
-            <Pill>{tag}</Pill>
-          </li>
-        ))
+        project.data.link && (
+          <Button target='_blank' href={project.data.link}>
+            Read more &rarr;
+          </Button>
+        )
       }
-    </ul>
-    {
-      project.data.link && (
-        <Button target='_blank' href={project.data.link}>
-          Read more &rarr;
-        </Button>
-      )
-    }
-  </div>
-</Card>
+    </div>
+  </Card>
+</div>

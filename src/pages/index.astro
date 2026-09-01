@@ -10,7 +10,7 @@ const collaborators = [
   { name: 'karriere.at', note: "Austria's largest job platform — job posting data for the AI-exposure project" },
   { name: 'Notruf Niederösterreich GmbH', note: 'emergency call and dispatch data for the gender-in-EMS paper' },
   { name: 'Linz Netz GmbH & Netz Oberösterreich GmbH', note: "Upper Austria's two largest grid operators — field experiment on electricity consumption" },
-  { name: 'World Bank', note: 'applied economic research and data analysis' },
+  { name: 'World Bank (EuroCOMP Lab)', note: 'consulting on impact evaluations of EU cohesion-policy programs' },
 ];
 
 const featuredSlugs = ['ai-labor-market-austria', 'working-from-home', 'gender-ems'];
@@ -66,7 +66,7 @@ const featuredProjects = featuredSlugs
                 class='underline'
                 target='_blank'
                 rel='noopener'
-                href='https://www.linkedin.com/in/raphaelgottweis/'>LinkedIn</a
+                href='https://www.linkedin.com/in/raphael-gottweis-99bab0258/'>LinkedIn</a
               >.
             </p>
             <div class='flex gap-4 flex-wrap'>
@@ -131,19 +131,23 @@ const featuredProjects = featuredSlugs
         <div class='grid md:grid-cols-3 gap-8'>
           {
             featuredProjects.map((project) => (
-              <Card color='white'>
-                <div class='h-40 rounded-lg border-[3px] border-black overflow-hidden'>
-                  <img
-                    src={featuredThumbs[project.id]}
-                    alt=''
-                    class='h-full w-full object-cover'
-                  />
-                </div>
-                <h3 class='poppins text-lg md:text-xl mt-4'>
-                  {project.data.title}
-                </h3>
-                <p class='poppins mt-2 text-sm'>{project.data.description}</p>
-              </Card>
+              <a href={`/research/#${project.id}`} class='block'>
+                <Card color='white'>
+                  <div class='h-40 rounded-lg border-[3px] border-black overflow-hidden'>
+                    <img
+                      src={featuredThumbs[project.id]}
+                      alt=''
+                      class='h-full w-full object-cover'
+                    />
+                  </div>
+                  <h3 class='poppins text-lg md:text-xl mt-4'>
+                    {project.data.title}
+                  </h3>
+                  <p class='poppins mt-2 text-sm'>
+                    {project.data.description}
+                  </p>
+                </Card>
+              </a>
             ))
           }
         </div>
@@ -156,8 +160,9 @@ const featuredProjects = featuredSlugs
         <p class='poppins'>
           I studied economics at WU Vienna (BSc, MSc Science Track, top 1% of
           my cohort), with an exchange semester at ISCTE Business School in
-          Lisbon. During my PhD, I've worked as a consultant for the World
-          Bank. Before that, during my Master's, I was a student assistant on
+          Lisbon. During my PhD, I've consulted for the World Bank's EuroCOMP
+          Lab, designing impact evaluations for EU cohesion-policy programs.
+          Before that, during my Master's, I was a student assistant on
           behavioral economics and public finance projects at the Institute
           for Advanced Studies (IHS).
         </p>
