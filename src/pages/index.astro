@@ -33,9 +33,9 @@ const featuredProjects = featuredSlugs
 >
   <main class='bg-blue-theme p-6'>
     <MobileSocials />
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4 items-stretch'>
+    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4 items-start'>
       <h2 class='hidden'>About Raphael Gottweis</h2>
-      <div class='col-span-8 md:col-span-5 flex'>
+      <div class='col-span-8 md:col-span-5'>
         <Card color='#86efac'>
           <div class='flex flex-col justify-between items-start gap-4'>
             <p class='mt-4 outfit text-2xl md:text-5xl lg:text-6xl'>
@@ -80,9 +80,9 @@ const featuredProjects = featuredSlugs
           </div>
         </Card>
       </div>
-      <div class='col-span-8 md:col-span-3 flex'>
+      <div class='col-span-8 md:col-span-3'>
         <Card color='white'>
-          <div class='h-64 md:h-full w-full rounded-lg border-[3px] border-black overflow-hidden'>
+          <div class='h-64 md:h-[380px] w-full rounded-lg border-[3px] border-black overflow-hidden'>
             <Image
               src={profile}
               alt='Raphael Gottweis'
