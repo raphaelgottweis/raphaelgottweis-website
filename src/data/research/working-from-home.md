@@ -8,7 +8,7 @@ tags:
 status: Working Paper
 authors: Raphael Gottweis
 updated: "2026-06-01"
-order: 1
+order: 0
 ---
 
 How has the shift to remote and hybrid work reshaped wages, mobility, and career trajectories in Austria? This project uses linked administrative employer-employee data to trace how working-from-home arrangements affect labor market outcomes over time.

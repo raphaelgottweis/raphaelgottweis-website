@@ -8,7 +8,7 @@ tags:
 status: Ongoing
 authors: Raphael Gottweis
 updated: "2026-08-01"
-order: 0
+order: 1
 ---
 
 What does the Austrian labor market actually look like in the age of generative AI? This project builds occupation- and task-level measures of AI exposure by classifying large volumes of job postings and task descriptions with large language models, in collaboration with karriere.at.

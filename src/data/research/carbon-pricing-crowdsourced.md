@@ -9,7 +9,7 @@ status: Conditionally Accepted
 authors: Holzknecht, Schwaiger, Blanco, Huber, Kirchler & 55 co-authors (incl. Raphael Gottweis)
 updated: "2026-06-23"
 link: https://manydesignscarbon.online
-order: -1
+order: 3
 ---
 
 Conditionally accepted at *Nature Human Behaviour*. A carbon price is an effective, cost-efficient way to cut emissions, but low public acceptance keeps holding back real-world adoption. This pre-registered "many-designs" project brought together international research teams — my team among them — who each independently designed a behavioral intervention meant to increase support for carbon pricing. All 55 interventions were then tested simultaneously with almost 20,000 U.S. residents.

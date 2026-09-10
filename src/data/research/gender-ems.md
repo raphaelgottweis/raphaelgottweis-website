@@ -8,7 +8,7 @@ tags:
 status: Working Paper
 authors: Raphael Gottweis
 updated: "2025-11-01"
-order: 3
+order: 2
 ---
 
 Does the gender of emergency medical personnel affect patient outcomes? This project combines administrative health records with econometric methods to study gender dynamics in emergency care.
