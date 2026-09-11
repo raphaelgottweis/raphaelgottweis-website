@@ -9,10 +9,10 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<ul class='grid md:grid-cols-2 gap-8'>
+<ul class='grid md:grid-cols-2 gap-8 items-stretch'>
   {
     projects.map((project) => (
-      <li>
+      <li class='flex'>
         <ResearchCard project={project} />
       </li>
     ))
